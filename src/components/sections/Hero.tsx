@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { MotionWrapper } from "@/components/shared/MotionWrapper"
-import { ASSETS, buildWhatsAppUrl, DEFAULT_WHATSAPP_MESSAGE } from "@/lib/constants"
+import { ASSETS, BRAND, buildWhatsAppUrl, DEFAULT_WHATSAPP_MESSAGE } from "@/lib/constants"
 
 export function Hero() {
   const whatsappUrl = buildWhatsAppUrl(DEFAULT_WHATSAPP_MESSAGE)
@@ -34,9 +34,9 @@ export function Hero() {
           </span>
 
           <h1 className="font-display text-3xl font-black leading-tight text-white sm:text-5xl lg:text-6xl">
-            لحوم بلدي طازة
+            {BRAND.name}
             <br />
-            <span className="text-amber">من المحل لباب بيتك</span>
+            <span className="text-amber">{BRAND.tagline}</span>
           </h1>
 
           <p className="mx-auto mt-4 max-w-lg text-base text-white/90 sm:text-lg">

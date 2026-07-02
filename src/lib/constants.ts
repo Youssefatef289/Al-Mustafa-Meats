@@ -8,7 +8,7 @@ export const PHONES = {
 
 export const BRAND = {
   name: "لحوم المصطفى",
-  tagline: "من المحل لباب بيتك",
+  tagline: "المضمون فى عالم اللحوم",
   parentBrand: "مطعم مشويات لحوم المصطفى",
   email: "info@almustafameats.com",
   workingHours: "يوميًا: 9 ص — 11 م",

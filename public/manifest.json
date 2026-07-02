@@ -1,7 +1,7 @@
 {
-  "name": "لحوم المصطفى",
+  "name": "لحوم المصطفى - المضمون فى عالم اللحوم",
   "short_name": "لحوم المصطفى",
-  "description": "لحوم بلدي طازة ومصنعة — من المحل لباب بيتك. توصيل مبرد لكل القاهرة والجيزة.",
+  "description": "لحوم المصطفى - المضمون فى عالم اللحوم. لحوم بلدي طازة، مشويات، دواجن ومصنعات لحوم. طلب أونلاين وتوصيل من فروع بني سويف.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#FDF6EC",
@@ -11,9 +11,9 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "/images/Logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
       "purpose": "any maskable"
     }
   ]
