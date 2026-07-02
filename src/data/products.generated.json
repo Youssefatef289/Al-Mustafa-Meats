@@ -1,0 +1,514 @@
+[
+  {
+    "id": "offal-طحال",
+    "name": "طحال",
+    "catId": "offal",
+    "image": "/images/فواكه المدبح/طحال 170.jpg",
+    "pricePerKg": 170,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "offal-فشه",
+    "name": "فشه",
+    "catId": "offal",
+    "image": "/images/فواكه المدبح/فشه 160.jpg",
+    "pricePerKg": 160,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "offal-قلب",
+    "name": "قلب",
+    "catId": "offal",
+    "image": "/images/فواكه المدبح/قلب 380.jpg",
+    "pricePerKg": 380,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "offal-كارع-بقرى",
+    "name": "كارع بقرى",
+    "catId": "offal",
+    "image": "/images/فواكه المدبح/كارع بقرى 300.webp",
+    "pricePerKg": 300,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "offal-كارع-جمسى",
+    "name": "كارع جمسى",
+    "catId": "offal",
+    "image": "/images/فواكه المدبح/كارع جمسى 300.jpeg",
+    "pricePerKg": 300,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "offal-كبده-و-كلاوى",
+    "name": "كبده و كلاوى",
+    "catId": "offal",
+    "image": "/images/فواكه المدبح/كبده و كلاوى 420.jpg",
+    "pricePerKg": 420,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "offal-كرشه",
+    "name": "كرشه",
+    "catId": "offal",
+    "image": "/images/فواكه المدبح/كرشه 160.jpg",
+    "pricePerKg": 160,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "offal-كلاوى",
+    "name": "كلاوى",
+    "catId": "offal",
+    "image": "/images/فواكه المدبح/كلاوى 400.jpg",
+    "pricePerKg": 400,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "offal-كوارع",
+    "name": "كوارع",
+    "catId": "offal",
+    "image": "/images/فواكه المدبح/كوارع 300.jpg",
+    "pricePerKg": 300,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "offal-لحمه-راس",
+    "name": "لحمه راس",
+    "catId": "offal",
+    "image": "/images/فواكه المدبح/لحمه راس 260.jpg",
+    "pricePerKg": 260,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "offal-لسان",
+    "name": "لسان",
+    "catId": "offal",
+    "image": "/images/فواكه المدبح/لسان 300.jpg",
+    "pricePerKg": 300,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "offal-مخ",
+    "name": "مخ",
+    "catId": "offal",
+    "image": "/images/فواكه المدبح/مخ 280.jpg",
+    "pricePerKg": 280,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "offal-ممبار",
+    "name": "ممبار",
+    "catId": "offal",
+    "image": "/images/فواكه المدبح/ممبار 120.jpeg",
+    "pricePerKg": 120,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "offal-ممبار-متنظف",
+    "name": "ممبار متنظف",
+    "catId": "offal",
+    "image": "/images/فواكه المدبح/ممبار متنظف 160.jpeg",
+    "pricePerKg": 160,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "meats-استيك",
+    "name": "استيك",
+    "catId": "meats",
+    "image": "/images/قسم اللحوم/استيك 450.webp",
+    "pricePerKg": 450,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "meats-الانتركوت",
+    "name": "الانتركوت",
+    "catId": "meats",
+    "image": "/images/قسم اللحوم/الانتركوت.jpg",
+    "pricePerKg": null,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "meats-بفتيك",
+    "name": "بفتيك",
+    "catId": "meats",
+    "image": "/images/قسم اللحوم/بفتيك 450.jpeg",
+    "pricePerKg": 450,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "meats-ريش-ضانى",
+    "name": "ريش ضانى",
+    "catId": "meats",
+    "image": "/images/قسم اللحوم/ريش  ضانى 440.jpg",
+    "pricePerKg": 440,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "meats-عرق-التربيانكو",
+    "name": "عرق التربيانكو",
+    "catId": "meats",
+    "image": "/images/قسم اللحوم/عرق التربيانكو 440.jpg",
+    "pricePerKg": 440,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "meats-عرق-فلتو",
+    "name": "عرق فلتو",
+    "catId": "meats",
+    "image": "/images/قسم اللحوم/عرق فلتو  550.jpg",
+    "pricePerKg": 550,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "meats-كباب-حله",
+    "name": "كباب حله",
+    "catId": "meats",
+    "image": "/images/قسم اللحوم/كباب حله 440.jpg",
+    "pricePerKg": 440,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "meats-كبده-بلدى-صافى",
+    "name": "كبده بلدى صافى",
+    "catId": "meats",
+    "image": "/images/قسم اللحوم/كبده بلدى صافى  450.jpg",
+    "pricePerKg": 450,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "meats-كولاته",
+    "name": "كولاته",
+    "catId": "meats",
+    "image": "/images/قسم اللحوم/كولاته.jpg",
+    "pricePerKg": null,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "meats-لحم-احمر",
+    "name": "لحم احمر",
+    "catId": "meats",
+    "image": "/images/قسم اللحوم/لحم احمر 440.jpg",
+    "pricePerKg": 440,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "meats-لحم-حواوشى",
+    "name": "لحم حواوشى",
+    "catId": "meats",
+    "image": "/images/قسم اللحوم/لحم حواوشى 400.png",
+    "pricePerKg": 400,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "meats-لحم-ضانى-برقى",
+    "name": "لحم ضانى برقى",
+    "catId": "meats",
+    "image": "/images/قسم اللحوم/لحم ضانى برقى 440.webp",
+    "pricePerKg": 440,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "meats-لحم-ماعز",
+    "name": "لحم ماعز",
+    "catId": "meats",
+    "image": "/images/قسم اللحوم/لحم ماعز 440.png",
+    "pricePerKg": 440,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "meats-لحم-مفروم",
+    "name": "لحم مفروم",
+    "catId": "meats",
+    "image": "/images/قسم اللحوم/لحم مفروم 420.jpg",
+    "pricePerKg": 420,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "meats-لحمه-بلدى",
+    "name": "لحمه بلدى",
+    "catId": "meats",
+    "image": "/images/قسم اللحوم/لحمه بلدى 420.jpg",
+    "pricePerKg": 420,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "meats-موزه-بقرى",
+    "name": "موزه بقرى",
+    "catId": "meats",
+    "image": "/images/قسم اللحوم/موزه  بقرى 440.jpg",
+    "pricePerKg": 440,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "meats-موزه-ضانى",
+    "name": "موزه ضانى",
+    "catId": "meats",
+    "image": "/images/قسم اللحوم/موزه ضانى 450.jpg",
+    "pricePerKg": 450,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "grills-استيك",
+    "name": "استيك",
+    "catId": "grills",
+    "image": "/images/مشويات/استيك 600.jpeg",
+    "pricePerKg": 600,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "grills-حواوشى",
+    "name": "حواوشى",
+    "catId": "grills",
+    "image": "/images/مشويات/حواوشى 40.webp",
+    "pricePerKg": 40,
+    "priceUnit": "piece"
+  },
+  {
+    "id": "grills-حواوشى-اسكندرانى-عادى",
+    "name": "حواوشى اسكندرانى عادى",
+    "catId": "grills",
+    "image": "/images/مشويات/حواوشى اسكندرانى   عادى 85.jpg",
+    "pricePerKg": 85,
+    "priceUnit": "piece"
+  },
+  {
+    "id": "grills-حواوشى-سجق-عادى",
+    "name": "حواوشى سجق عادى",
+    "catId": "grills",
+    "image": "/images/مشويات/حواوشى سجق عادى 90.webp",
+    "pricePerKg": 90,
+    "priceUnit": "piece"
+  },
+  {
+    "id": "grills-حواوشى-سجق-وش-بيتزا",
+    "name": "حواوشى سجق وش بيتزا",
+    "catId": "grills",
+    "image": "/images/مشويات/حواوشى سجق وش بيتزا 110.jpeg",
+    "pricePerKg": 110,
+    "priceUnit": "piece"
+  },
+  {
+    "id": "grills-حواوشى-لحمه-بادى-اسكندرنى-وش-بيتزا",
+    "name": "حواوشى لحمه بادى اسكندرنى وش بيتزا",
+    "catId": "grills",
+    "image": "/images/مشويات/حواوشى لحمه بادى اسكندرنى وش بيتزا 110.jpg",
+    "pricePerKg": 110,
+    "priceUnit": "piece"
+  },
+  {
+    "id": "grills-حواوشى-لحمه-سكينه",
+    "name": "حواوشى لحمه سكينه",
+    "catId": "grills",
+    "image": "/images/مشويات/حواوشى لحمه سكينه 110.jpeg",
+    "pricePerKg": 110,
+    "priceUnit": "piece"
+  },
+  {
+    "id": "grills-طرب",
+    "name": "طرب",
+    "catId": "grills",
+    "image": "/images/مشويات/طرب 550.jpg",
+    "pricePerKg": 550,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "grills-كباب",
+    "name": "كباب",
+    "catId": "grills",
+    "image": "/images/مشويات/كباب 650.jpeg",
+    "pricePerKg": 650,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "grills-كفته",
+    "name": "كفته",
+    "catId": "grills",
+    "image": "/images/مشويات/كفته 500.jpg",
+    "pricePerKg": 500,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "processed-برجر",
+    "name": "برجر",
+    "catId": "processed",
+    "image": "/images/مصنعات اللحوم/برجر 380.jpg",
+    "pricePerKg": 380,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "processed-ريش-ضانى",
+    "name": "ريش ضانى",
+    "catId": "processed",
+    "image": "/images/مصنعات اللحوم/ريش ضانى 440.jpeg",
+    "pricePerKg": 440,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "processed-ريش-ماعز",
+    "name": "ريش ماعز",
+    "catId": "processed",
+    "image": "/images/مصنعات اللحوم/ريش ماعز 400.jpeg",
+    "pricePerKg": 400,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "processed-سجق",
+    "name": "سجق",
+    "catId": "processed",
+    "image": "/images/مصنعات اللحوم/سجق 370.jpg",
+    "pricePerKg": 370,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "processed-عكاوى",
+    "name": "عكاوى",
+    "catId": "processed",
+    "image": "/images/مصنعات اللحوم/عكاوى 330.jpg",
+    "pricePerKg": 330,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "processed-كبده-بلدى-صافى",
+    "name": "كبده بلدى صافى",
+    "catId": "processed",
+    "image": "/images/مصنعات اللحوم/كبده بلدى صافى  450.jpg",
+    "pricePerKg": 450,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "processed-كبده-ضانى-برقى",
+    "name": "كبده ضانى برقى",
+    "catId": "processed",
+    "image": "/images/مصنعات اللحوم/كبده ضانى  برقى 440.jpeg",
+    "pricePerKg": 440,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "processed-كبده-ضانى",
+    "name": "كبده ضانى",
+    "catId": "processed",
+    "image": "/images/مصنعات اللحوم/كبده ضانى 440.jpeg",
+    "pricePerKg": 440,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "processed-كبده-ماعز",
+    "name": "كبده ماعز",
+    "catId": "processed",
+    "image": "/images/مصنعات اللحوم/كبده ماعز 420.jpeg",
+    "pricePerKg": 420,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "processed-كبده-و-كلاوى-وقلب",
+    "name": "كبده و كلاوى وقلب",
+    "catId": "processed",
+    "image": "/images/مصنعات اللحوم/كبده و كلاوى وقلب 420.jpeg",
+    "pricePerKg": 420,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "processed-كفته",
+    "name": "كفته",
+    "catId": "processed",
+    "image": "/images/مصنعات اللحوم/كفته 420.jpg",
+    "pricePerKg": 420,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "processed-كفته-أرز",
+    "name": "كفته أرز",
+    "catId": "processed",
+    "image": "/images/مصنعات اللحوم/كفته أرز 320.jpg",
+    "pricePerKg": 320,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "processed-كفته-طرب",
+    "name": "كفته طرب",
+    "catId": "processed",
+    "image": "/images/مصنعات اللحوم/كفته طرب 550.jpg",
+    "pricePerKg": 550,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "processed-كلاوى",
+    "name": "كلاوى",
+    "catId": "processed",
+    "image": "/images/مصنعات اللحوم/كلاوى 400.jpeg",
+    "pricePerKg": 400,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "processed-كلاوى-وقلب",
+    "name": "كلاوى وقلب",
+    "catId": "processed",
+    "image": "/images/مصنعات اللحوم/كلاوى وقلب 400.jpeg",
+    "pricePerKg": 400,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "processed-موزه-ضانى",
+    "name": "موزه ضانى",
+    "catId": "processed",
+    "image": "/images/مصنعات اللحوم/موزه ضانى 400.jpeg",
+    "pricePerKg": 400,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "processed-موزه-ماعز",
+    "name": "موزه ماعز",
+    "catId": "processed",
+    "image": "/images/مصنعات اللحوم/موزه ماعز 400.jpeg",
+    "pricePerKg": 400,
+    "priceUnit": "kg"
+  },
+  {
+    "id": "sandwiches-سندوتش-استيك",
+    "name": "سندوتش استيك",
+    "catId": "sandwiches",
+    "image": "/images/السندوتشات/سندوتش استيك 70.jpeg",
+    "pricePerKg": 70,
+    "priceUnit": "piece"
+  },
+  {
+    "id": "sandwiches-سندوتش-برجر",
+    "name": "سندوتش برجر",
+    "catId": "sandwiches",
+    "image": "/images/السندوتشات/سندوتش برجر 40.jpg",
+    "pricePerKg": 40,
+    "priceUnit": "piece"
+  },
+  {
+    "id": "sandwiches-سندوتش-سجق",
+    "name": "سندوتش سجق",
+    "catId": "sandwiches",
+    "image": "/images/السندوتشات/سندوتش سجق 40.webp",
+    "pricePerKg": 40,
+    "priceUnit": "piece"
+  },
+  {
+    "id": "sandwiches-سندوتش-طرب",
+    "name": "سندوتش طرب",
+    "catId": "sandwiches",
+    "image": "/images/السندوتشات/سندوتش طرب 55.jpeg",
+    "pricePerKg": 55,
+    "priceUnit": "piece"
+  },
+  {
+    "id": "sandwiches-سندوتش-كباب",
+    "name": "سندوتش كباب",
+    "catId": "sandwiches",
+    "image": "/images/السندوتشات/سندوتش كباب 70.jpg",
+    "pricePerKg": 70,
+    "priceUnit": "piece"
+  },
+  {
+    "id": "sandwiches-سندوتش-كفته",
+    "name": "سندوتش كفته",
+    "catId": "sandwiches",
+    "image": "/images/السندوتشات/سندوتش كفته  40.jpeg",
+    "pricePerKg": 40,
+    "priceUnit": "piece"
+  }
+]
