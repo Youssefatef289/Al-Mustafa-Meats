@@ -2,11 +2,12 @@ import { Link, useLocation } from "react-router-dom"
 import { Home, ShoppingBag, LayoutGrid } from "lucide-react"
 import { ASSETS, buildWhatsAppUrl, DEFAULT_WHATSAPP_MESSAGE } from "@/lib/constants"
 import { useCartStore } from "@/store/cartStore"
+import { useUiStore } from "@/store/uiStore"
 import { cn } from "@/lib/utils"
 
 const TABS = [
   { id: "home", label: "الرئيسية", href: "/", icon: Home },
-  { id: "products", label: "المنتجات", href: "/products", icon: LayoutGrid },
+  { id: "products", label: "المنتجات", href: null, icon: LayoutGrid },
   { id: "cart", label: "السلة", href: null, icon: ShoppingBag },
   { id: "whatsapp", label: "واتساب", href: null, icon: null },
 ] as const
@@ -15,6 +16,7 @@ export function MobileBottomNav() {
   const location = useLocation()
   const itemCount = useCartStore((s) => s.items.length)
   const setCartOpen = useCartStore((s) => s.setCartOpen)
+  const setCategoriesPickerOpen = useUiStore((s) => s.setCategoriesPickerOpen)
   const whatsappUrl = buildWhatsAppUrl(DEFAULT_WHATSAPP_MESSAGE)
 
   return (
@@ -59,11 +61,28 @@ export function MobileBottomNav() {
             )
           }
 
-          const isActive =
-            tab.href === "/"
-              ? location.pathname === "/"
-              : location.pathname.startsWith(tab.href ?? "")
+          if (tab.id === "products") {
+            const isActive = location.pathname.startsWith("/products")
+            return (
+              <button
+                key={tab.id}
+                type="button"
+                onClick={() => setCategoriesPickerOpen(true)}
+                className={cn(
+                  "relative flex flex-col items-center gap-1 py-2.5 text-[11px] font-semibold transition-colors active:bg-cream",
+                  isActive ? "text-brand-red" : "text-dark/60",
+                )}
+              >
+                <LayoutGrid className={cn("size-6", isActive && "stroke-[2.5]")} />
+                {isActive && (
+                  <span className="absolute top-1 h-0.5 w-6 rounded-full bg-brand-red" />
+                )}
+                {tab.label}
+              </button>
+            )
+          }
 
+          const isActive = location.pathname === "/"
           const Icon = tab.icon!
 
           return (
@@ -71,11 +90,14 @@ export function MobileBottomNav() {
               key={tab.id}
               to={tab.href!}
               className={cn(
-                "flex flex-col items-center gap-1 py-2.5 text-[11px] font-semibold transition-colors active:bg-cream",
+                "relative flex flex-col items-center gap-1 py-2.5 text-[11px] font-semibold transition-colors active:bg-cream",
                 isActive ? "text-brand-red" : "text-dark/60",
               )}
             >
               <Icon className={cn("size-6", isActive && "stroke-[2.5]")} />
+              {isActive && (
+                <span className="absolute top-1 h-0.5 w-6 rounded-full bg-brand-red" />
+              )}
               {tab.label}
             </Link>
           )

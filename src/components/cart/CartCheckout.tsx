@@ -1,4 +1,4 @@
-import { useState, type FormEvent, type ReactNode } from "react"
+import { useState, useEffect, type FormEvent, type ReactNode } from "react"
 import { MessageCircle, ShoppingBag, Trash2, Package } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
@@ -12,6 +12,22 @@ import { BRANCHES, PAYMENT_METHODS } from "@/lib/constants"
 import { PRODUCTS, formatWeight } from "@/data/products"
 import { imageSrc } from "@/lib/images"
 import { cn } from "@/lib/utils"
+
+function useIsMobile(breakpoint = 768) {
+  const [isMobile, setIsMobile] = useState(
+    () => typeof window !== "undefined" && window.innerWidth < breakpoint,
+  )
+
+  useEffect(() => {
+    const mq = window.matchMedia(`(max-width: ${breakpoint - 1}px)`)
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches)
+    setIsMobile(mq.matches)
+    mq.addEventListener("change", handler)
+    return () => mq.removeEventListener("change", handler)
+  }, [breakpoint])
+
+  return isMobile
+}
 
 function getItemImage(productId: string, fallback?: string): string {
   if (fallback) return fallback
@@ -30,6 +46,7 @@ export function CartCheckout() {
   const totalPrice = useCartStore((s) => s.totalPrice())
   const getWhatsAppUrl = useCartStore((s) => s.getWhatsAppUrl)
   const [step, setStep] = useState<"cart" | "checkout">("cart")
+  const isMobile = useIsMobile()
 
   const handleCheckout = (e: FormEvent) => {
     e.preventDefault()
@@ -49,7 +66,10 @@ export function CartCheckout() {
 
   return (
     <Sheet open={isOpen} onOpenChange={handleOpenChange}>
-      <SheetContent side="left" className="gap-0 overflow-hidden p-0">
+      <SheetContent
+        side={isMobile ? "full" : "left"}
+        className={cn("gap-0 overflow-hidden p-0", isMobile && "bg-cream")}
+      >
         <SheetHeader className="shrink-0">
           <SheetTitle className="flex items-center gap-2 text-brand-red">
             <ShoppingBag className="size-5" />

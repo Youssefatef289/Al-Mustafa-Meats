@@ -574,5 +574,140 @@
     "pricePerKg": 40,
     "priceUnit": "piece",
     "categoryId": "sandwiches"
+  },
+  {
+    "id": "poultry-بانيه",
+    "name": "بانيه",
+    "catId": "poultry",
+    "image": "/images/دواجن/imgi_20_فيليه دجاج طازج.webp",
+    "pricePerKg": 195,
+    "priceUnit": "kg",
+    "categoryId": "poultry"
+  },
+  {
+    "id": "poultry-أوراك",
+    "name": "أوراك",
+    "catId": "poultry",
+    "image": "/images/دواجن/imgi_9_اوراك دجاج طازجة.webp",
+    "pricePerKg": 95,
+    "priceUnit": "kg",
+    "categoryId": "poultry"
+  },
+  {
+    "id": "poultry-أوراك-مخلية",
+    "name": "أوراك مخلية",
+    "catId": "poultry",
+    "image": "/images/دواجن/imgi_21_فيليه رومى طازج.webp",
+    "pricePerKg": 180,
+    "priceUnit": "kg",
+    "categoryId": "poultry"
+  },
+  {
+    "id": "poultry-دبابيس",
+    "name": "دبابيس",
+    "catId": "poultry",
+    "image": "/images/دواجن/imgi_12_دبوس دجاج طازج.webp",
+    "pricePerKg": 125,
+    "priceUnit": "kg",
+    "categoryId": "poultry"
+  },
+  {
+    "id": "poultry-صدور-بالعظم",
+    "name": "صدور بالعظم",
+    "catId": "poultry",
+    "image": "/images/دواجن/imgi_19_صدور دجاج بالعظم طازجه.webp",
+    "pricePerKg": 125,
+    "priceUnit": "kg",
+    "categoryId": "poultry"
+  },
+  {
+    "id": "poultry-صدور-مخلية",
+    "name": "صدور مخلية",
+    "catId": "poultry",
+    "image": "/images/دواجن/imgi_20_فيليه دجاج طازج.webp",
+    "pricePerKg": 195,
+    "priceUnit": "kg",
+    "categoryId": "poultry"
+  },
+  {
+    "id": "poultry-شيش-طاووق",
+    "name": "شيش طاووق",
+    "catId": "poultry",
+    "image": "/images/دواجن/imgi_17_شيش طاووق طازج.webp",
+    "pricePerKg": 185,
+    "priceUnit": "kg",
+    "categoryId": "poultry"
+  },
+  {
+    "id": "poultry-شاورما-فراخ",
+    "name": "شاورما فراخ",
+    "catId": "poultry",
+    "image": "/images/دواجن/imgi_17_شيش طاووق طازج.webp",
+    "pricePerKg": 200,
+    "priceUnit": "kg",
+    "categoryId": "poultry"
+  },
+  {
+    "id": "poultry-استربس",
+    "name": "استربس",
+    "catId": "poultry",
+    "image": "/images/دواجن/imgi_6_اجنحه دجاج طازجه.webp",
+    "pricePerKg": 205,
+    "priceUnit": "kg",
+    "categoryId": "poultry"
+  },
+  {
+    "id": "poultry-أجنحة",
+    "name": "أجنحة",
+    "catId": "poultry",
+    "image": "/images/دواجن/imgi_6_اجنحه دجاج طازجه.webp",
+    "pricePerKg": 65,
+    "priceUnit": "kg",
+    "categoryId": "poultry"
+  },
+  {
+    "id": "poultry-كبد-وقوانص",
+    "name": "كبد وقوانص",
+    "catId": "poultry",
+    "image": "/images/دواجن/imgi_22_قوانص دجاج طازجه.webp",
+    "pricePerKg": 100,
+    "priceUnit": "kg",
+    "categoryId": "poultry"
+  },
+  {
+    "id": "poultry-كبدة-صافي",
+    "name": "كبدة صافي",
+    "catId": "poultry",
+    "image": "/images/دواجن/imgi_23_كبده دجاج طازجه.webp",
+    "pricePerKg": 125,
+    "priceUnit": "kg",
+    "categoryId": "poultry"
+  },
+  {
+    "id": "poultry-هياكل",
+    "name": "هياكل",
+    "catId": "poultry",
+    "image": "/images/دواجن/imgi_14_دجاج كامل طازج.webp",
+    "pricePerKg": 40,
+    "priceUnit": "kg",
+    "categoryId": "poultry"
+  },
+  {
+    "id": "poultry-فراخ-بيضاء-كاملة",
+    "name": "فراخ بيضاء كاملة",
+    "catId": "poultry",
+    "image": "/images/دواجن/imgi_14_دجاج كامل طازج.webp",
+    "pricePerKg": 96,
+    "priceUnit": "kg",
+    "categoryId": "poultry"
+  },
+  {
+    "id": "poultry-فراخ-بلدي",
+    "name": "فراخ بلدي",
+    "catId": "poultry",
+    "image": "/images/دواجن/imgi_13_دجاج بلدى كامل طازج.webp",
+    "pricePerKg": 110,
+    "priceUnit": "kg",
+    "categoryId": "poultry"
   }
 ]

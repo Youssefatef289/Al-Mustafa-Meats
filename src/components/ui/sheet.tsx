@@ -25,7 +25,7 @@ SheetOverlay.displayName = DialogPrimitive.Overlay.displayName
 
 interface SheetContentProps
   extends React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content> {
-  side?: "top" | "bottom" | "left" | "right"
+  side?: "top" | "bottom" | "left" | "right" | "full"
 }
 
 const SheetContent = React.forwardRef<
@@ -42,6 +42,8 @@ const SheetContent = React.forwardRef<
           "inset-y-0 right-0 h-full w-[min(380px,92vw)] border-s border-dark/10 data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right",
         side === "left" &&
           "inset-y-0 left-0 h-full w-[min(380px,92vw)] border-e border-dark/10 data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left",
+        side === "full" &&
+          "inset-0 h-full w-full data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom data-[state=closed]:duration-300 data-[state=open]:duration-400",
         className,
       )}
       {...props}

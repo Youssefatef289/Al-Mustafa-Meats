@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { useSearchParams } from "react-router-dom"
 import { AnimatePresence, motion } from "framer-motion"
 import { ProductCard } from "@/components/products/ProductCard"
@@ -26,10 +26,25 @@ export function ProductsPage() {
   const [active, setActive] = useState<ProductCategoryId>(() =>
     parseCategory(paramCat),
   )
+  const tabsContainerRef = useRef<HTMLDivElement>(null)
+  const tabRefs = useRef<Record<string, HTMLButtonElement | null>>({})
 
   useEffect(() => {
     setActive(parseCategory(paramCat))
   }, [paramCat])
+
+  useEffect(() => {
+    const tabEl = tabRefs.current[active]
+    const container = tabsContainerRef.current
+    if (!tabEl || !container) return
+
+    const tabLeft = tabEl.offsetLeft
+    const tabWidth = tabEl.offsetWidth
+    const containerWidth = container.offsetWidth
+    const scrollLeft = tabLeft - containerWidth / 2 + tabWidth / 2
+
+    container.scrollTo({ left: scrollLeft, behavior: "smooth" })
+  }, [active])
 
   const products = getProductsByCategory(active)
   const activeCategory = PRODUCT_CATEGORIES.find((c) => c.id === active)
@@ -51,14 +66,20 @@ export function ProductsPage() {
           subtitle="اختار القسم وحدد الوزن — السعر بيتحدث تلقائيًا"
         />
 
-        <div className="mb-8 flex gap-2 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div
+          ref={tabsContainerRef}
+          className="mb-8 flex gap-2 overflow-x-auto scroll-smooth pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        >
           {PRODUCT_CATEGORIES.map((cat) => (
             <button
               key={cat.id}
+              ref={(el) => {
+                tabRefs.current[cat.id] = el
+              }}
               type="button"
               onClick={() => handleTabChange(cat.id)}
               className={cn(
-                "flex shrink-0 items-center gap-2 rounded-full px-4 py-2 text-xs font-bold transition-all sm:px-5 sm:py-2.5 sm:text-sm",
+                "relative flex shrink-0 items-center gap-2 rounded-full px-4 py-2 text-xs font-bold transition-all sm:px-5 sm:py-2.5 sm:text-sm",
                 active === cat.id
                   ? "bg-brand-red text-white shadow-soft"
                   : "bg-white text-dark/70 hover:bg-brand-red/10 hover:text-brand-red",
@@ -70,6 +91,13 @@ export function ProductsPage() {
                 className="size-6 rounded-full object-cover sm:size-7"
               />
               {cat.label}
+              {active === cat.id && (
+                <motion.span
+                  layoutId="active-tab-dot"
+                  className="absolute -bottom-1 left-1/2 size-1.5 -translate-x-1/2 rounded-full bg-brand-red md:hidden"
+                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                />
+              )}
             </button>
           ))}
         </div>
@@ -113,7 +141,7 @@ export function ProductsPage() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4"
+            className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5"
           >
             {products.map((product, index) => (
               <ProductCard key={product.id} product={product} index={index} />

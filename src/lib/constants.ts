@@ -37,7 +37,6 @@ export const BRANCHES = [
 export const NAV_LINKS = [
   { href: "/", label: "الرئيسية" },
   { href: "/products", label: "المنتجات" },
-  { href: "/#offers", label: "العروض" },
   { href: "/#about", label: "عن الجزارة" },
   { href: "/#contact", label: "تواصل معنا" },
 ] as const

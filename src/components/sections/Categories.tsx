@@ -11,12 +11,12 @@ export function Categories() {
       <div className="container-main">
         <SectionHeading title="اختار قسمك" />
 
-        <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
+        <div className="grid grid-cols-3 gap-2 sm:gap-4">
           {PRODUCT_CATEGORIES.filter((c) => c.id !== "all").map((cat, index) => (
-            <MotionWrapper key={cat.id} delay={index * 0.06}>
+            <MotionWrapper key={cat.id} delay={index * 0.05}>
               <Link
                 to={`/products?category=${cat.id}`}
-                className="group block overflow-hidden rounded-2xl bg-white shadow-soft transition-all hover:scale-[1.02] hover:shadow-card-hover"
+                className="group block overflow-hidden rounded-xl bg-white transition-transform hover:scale-[1.02] active:scale-[0.98] sm:rounded-2xl"
               >
                 <div className="aspect-square overflow-hidden">
                   <img
@@ -26,16 +26,16 @@ export function Categories() {
                     className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
-                <div className="p-5">
+                <div className="p-2 sm:p-3">
                   <h3
                     id={index === 0 ? "categories-heading" : undefined}
-                    className="font-display text-lg font-bold text-dark"
+                    className="line-clamp-2 font-display text-[11px] font-bold leading-tight text-dark sm:text-sm"
                   >
                     {cat.label}
                   </h3>
-                  <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-brand-red">
-                    اعرض المنتجات
-                    <ArrowLeft className="size-4" />
+                  <span className="mt-1.5 hidden items-center gap-1 text-xs font-semibold text-brand-red sm:inline-flex">
+                    اعرض
+                    <ArrowLeft className="size-3" />
                   </span>
                 </div>
               </Link>

@@ -7,6 +7,7 @@ export type ProductCategoryId =
   | "grills"
   | "processed"
   | "sandwiches"
+  | "poultry"
 
 export type PriceUnit = "kg" | "piece"
 
@@ -63,12 +64,34 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     folder: "السندوتشات",
     image: "/images/السندوتشات/سندوتش برجر 40.jpg",
   },
+  {
+    id: "poultry",
+    label: "دواجن",
+    folder: "دواجن",
+    image: "/images/دواجن/imgi_14_دجاج كامل طازج.webp",
+  },
 ]
 
 export const PRODUCTS = catalog as Product[]
 
+const ALL_PRODUCTS_CATEGORY_ORDER: ProductCategoryId[] = [
+  "meats",
+  "grills",
+  "processed",
+  "offal",
+  "sandwiches",
+  "poultry",
+]
+
 export function getProductsByCategory(categoryId: ProductCategoryId): Product[] {
-  if (categoryId === "all") return PRODUCTS
+  if (categoryId === "all") {
+    return [...PRODUCTS].sort((a, b) => {
+      const orderA = ALL_PRODUCTS_CATEGORY_ORDER.indexOf(a.categoryId)
+      const orderB = ALL_PRODUCTS_CATEGORY_ORDER.indexOf(b.categoryId)
+      if (orderA !== orderB) return orderA - orderB
+      return a.name.localeCompare(b.name, "ar")
+    })
+  }
   return PRODUCTS.filter((p) => p.categoryId === categoryId)
 }
 
@@ -85,6 +108,31 @@ export function formatWeight(weight: number, unit: PriceUnit): string {
 export function calcLineTotal(price: number | null, weight: number): number | null {
   if (price === null) return null
   return Math.round(price * weight)
+}
+
+export function formatWeightNumeric(weight: number, unit: PriceUnit): string {
+  if (unit === "piece") {
+    return weight === 1 ? "1 قطعة" : `${weight} قطع`
+  }
+  return `${weight.toFixed(2)} كجم`
+}
+
+export function getMinOrderHint(unit: PriceUnit): string {
+  return unit === "piece" ? "الطلب من قطعة واحدة" : "الطلب من ربع كيلو"
+}
+
+export function getProductDescription(name: string, categoryId: ProductCategoryId): string {
+  const descriptions: Record<ProductCategoryId, string> = {
+    all: "منتج طازج من أجود أنواع اللحوم، مختار بعناية وجاهز للطلب.",
+    meats: "لحم طازج يوميًا من أجود القطع، مثالي للطبخ والشوي.",
+    grills: "مشويات جاهزة للتحضير، بنكهة أصيلة وجودة عالية.",
+    processed: "منتج لحوم مصنع بمعايير نظافة عالية، سريع التحضير.",
+    offal: "فواكه مدبح طازة ونظيفة، مختارة بعناية.",
+    sandwiches: "سندوتشات طازة ولذيذة، جاهزة للطلب والتوصيل.",
+    poultry: "دواجن طازة يوميًا، نظيفة ومختارة بعناية لأفضل مذاق.",
+  }
+
+  return descriptions[categoryId] ?? `منتج ${name} طازج من لحوم المصطفى.`
 }
 
 export const FAQ_ITEMS = [

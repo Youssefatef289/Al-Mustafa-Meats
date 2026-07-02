@@ -4,30 +4,35 @@ import { Button } from "@/components/ui/button"
 import { ProductCard } from "@/components/products/ProductCard"
 import { MotionWrapper } from "@/components/shared/MotionWrapper"
 import { SectionHeading } from "@/components/shared/SectionHeading"
-import { PRODUCTS } from "@/data/products"
+import { getProductsByCategory } from "@/data/products"
 
-const FEATURED = PRODUCTS.filter((p) => p.pricePerKg !== null).slice(0, 4)
+const HOME_PRODUCTS = getProductsByCategory("meats")
+  .filter((p) => p.pricePerKg !== null)
+  .slice(0, 6)
 
-export function FeaturedProducts() {
+export function HomeProducts() {
   return (
     <section
       id="products-preview"
       className="section-padding bg-white"
-      aria-labelledby="featured-heading"
+      aria-labelledby="home-products-heading"
     >
       <div className="container-main">
-        <SectionHeading title="الأكثر طلبًا" />
+        <SectionHeading
+          title="منتجاتنا"
+          subtitle="لحوم طازة يوميًا — اختار منتجك وحدد الوزن"
+        />
 
         <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5">
-          {FEATURED.map((product, index) => (
+          {HOME_PRODUCTS.map((product, index) => (
             <ProductCard key={product.id} product={product} index={index} />
           ))}
         </div>
 
-        <MotionWrapper className="mt-10 text-center">
+        <MotionWrapper className="mt-8 text-center sm:mt-10">
           <Button variant="default" size="lg" className="rounded-full" asChild>
             <Link to="/products">
-              كل المنتجات
+              عرض كل المنتجات
               <ArrowLeft className="size-4" />
             </Link>
           </Button>

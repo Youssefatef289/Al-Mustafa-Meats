@@ -2,6 +2,7 @@ import { CheckCircle2 } from "lucide-react"
 import { MotionWrapper } from "@/components/shared/MotionWrapper"
 import { SectionHeading } from "@/components/shared/SectionHeading"
 import { BRAND } from "@/lib/constants"
+import { imageSrc } from "@/lib/images"
 
 const POINTS = [
   "لحوم بلدي 100% من مصدر موثوق",
@@ -11,8 +12,7 @@ const POINTS = [
   "رد سريع على الطلبات على واتساب",
 ] as const
 
-const IMAGE =
-  "https://images.unsplash.com/photo-1603048297172-2105932e3b0e?w=800&h=600&fit=crop&auto=format&fm=webp&q=80"
+const WHY_US_IMAGE = "/images/ليه تختار.jpg"
 
 export function WhyUs() {
   return (
@@ -26,10 +26,10 @@ export function WhyUs() {
 
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <MotionWrapper>
-            <div className="overflow-hidden rounded-2xl shadow-soft-lg">
+            <div className="overflow-hidden rounded-2xl">
               <img
-                src={IMAGE}
-                alt="جزار محترف يقطع لحوم بلدي طازة"
+                src={imageSrc(WHY_US_IMAGE)}
+                alt={`${BRAND.name} — لحوم طازة بلدي`}
                 loading="lazy"
                 className="aspect-[4/3] w-full object-cover"
               />

@@ -1,8 +1,13 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { ShoppingCart, MessageCircle, Plus, Minus } from "lucide-react"
+import { ShoppingCart, Plus, Minus } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { calcLineTotal, formatWeight, type Product } from "@/data/products"
+import {
+  calcLineTotal,
+  formatWeightNumeric,
+  getMinOrderHint,
+  type Product,
+} from "@/data/products"
 import { imageSrc } from "@/lib/images"
 import { useCartStore } from "@/store/cartStore"
 import { buildWhatsAppUrl } from "@/lib/constants"
@@ -18,12 +23,13 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
   const step = isPiece ? 1 : 0.25
   const min = isPiece ? 1 : 0.25
   const max = isPiece ? 50 : 20
+  const defaultWeight = isPiece ? 1 : 0.5
 
-  const [weight, setWeight] = useState<number>(1)
+  const [weight, setWeight] = useState<number>(defaultWeight)
   const addItem = useCartStore((s) => s.addItem)
 
   const lineTotal = calcLineTotal(product.pricePerKg, weight)
-  const unitLabel = isPiece ? "ج/قطعة" : "ج/كجم"
+  const unitSuffix = isPiece ? "ج/قطعة" : "ج/كجم"
 
   const decrease = () => {
     setWeight((w) => Math.max(min, +(w - step).toFixed(2)))
@@ -47,19 +53,19 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
 
   const handleOrderNow = () => {
     const msg = product.pricePerKg
-      ? `السلام عليكم، عايز أطلب: ${product.name} — ${formatWeight(weight, product.priceUnit)}${lineTotal ? ` (${lineTotal} جنيه)` : ""} من لحوم المصطفى`
+      ? `السلام عليكم، عايز أطلب: ${product.name} — ${formatWeightNumeric(weight, product.priceUnit)}${lineTotal ? ` (${lineTotal} جنيه)` : ""} من لحوم المصطفى`
       : `السلام عليكم، عايز أستفسر عن سعر: ${product.name} من لحوم المصطفى`
     window.open(buildWhatsAppUrl(msg), "_blank", "noopener,noreferrer")
   }
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: 16 }}
+      initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.35, delay: Math.min(index * 0.03, 0.3) }}
-      className="flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-soft sm:rounded-2xl"
+      transition={{ duration: 0.3, delay: Math.min(index * 0.03, 0.25) }}
+      className="flex h-full flex-col overflow-hidden rounded-2xl bg-white"
     >
-      <div className="relative aspect-square overflow-hidden bg-cream">
+      <div className="aspect-square overflow-hidden rounded-2xl bg-cream">
         <img
           src={imageSrc(product.image)}
           alt={product.name}
@@ -68,51 +74,45 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
         />
       </div>
 
-      <div className="flex flex-1 flex-col p-2.5 sm:p-4">
-        <h3 className="line-clamp-2 font-display text-sm font-bold leading-snug text-dark sm:text-base">
-          {product.name}
-        </h3>
-
-        <p className="mt-1 tabular-nums text-xs font-semibold text-brand-red sm:text-sm">
-          {product.pricePerKg !== null
-            ? `${product.pricePerKg} ${unitLabel}`
-            : "السعر عند الطلب"}
-        </p>
+      <div className="flex flex-1 flex-col p-2.5 sm:p-3.5">
+        <div className="flex items-start justify-between gap-2">
+          <h3 className="line-clamp-2 min-w-0 flex-1 font-display text-sm font-bold leading-snug text-dark sm:text-base">
+            {product.name}
+          </h3>
+          <p className="shrink-0 text-end text-sm font-extrabold tabular-nums text-brand-red sm:text-base">
+            {product.pricePerKg !== null
+              ? lineTotal !== null
+                ? `${lineTotal} ج.م`
+                : `${product.pricePerKg} ${unitSuffix}`
+              : "عند الطلب"}
+          </p>
+        </div>
 
         {product.pricePerKg !== null && (
           <>
-            <p className="mt-1 tabular-nums text-xs font-bold text-dark sm:text-sm">
-              الإجمالي:{" "}
-              <span className="text-brand-red">
-                {lineTotal !== null ? `${lineTotal} ج` : "—"}
-              </span>
-            </p>
-
-            <div className="mt-2 sm:mt-3">
-              <div className="flex items-center justify-between gap-1 rounded-lg border border-dark/10 bg-cream px-1 py-1 sm:rounded-xl sm:px-2 sm:py-1.5">
+            <div className="mt-2.5">
+              <div className="flex items-center justify-between gap-1 rounded-xl bg-cream px-1 py-1 sm:px-1.5">
                 <button
                   type="button"
                   onClick={decrease}
                   disabled={weight <= min}
                   className={cn(
-                    "flex size-7 items-center justify-center rounded-full bg-white sm:size-8",
+                    "flex size-7 items-center justify-center rounded-lg bg-white text-dark sm:size-8",
                     weight <= min ? "opacity-40" : "hover:bg-brand-red hover:text-white",
                   )}
                   aria-label="تقليل"
                 >
                   <Minus className="size-3.5 sm:size-4" />
                 </button>
-                <div className="min-w-0 flex-1 text-center">
-                  <p className="truncate text-[10px] font-medium text-dark/55 sm:text-xs">
-                    {formatWeight(weight, product.priceUnit)}
-                  </p>
-                </div>
+                <p className="min-w-0 flex-1 text-center text-xs font-bold tabular-nums text-dark">
+                  {formatWeightNumeric(weight, product.priceUnit)}
+                </p>
                 <button
                   type="button"
                   onClick={increase}
                   disabled={weight >= max}
                   className={cn(
-                    "flex size-7 items-center justify-center rounded-full bg-white sm:size-8",
+                    "flex size-7 items-center justify-center rounded-lg bg-white text-dark sm:size-8",
                     weight >= max ? "opacity-40" : "hover:bg-brand-red hover:text-white",
                   )}
                   aria-label="زيادة"
@@ -121,28 +121,31 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
                 </button>
               </div>
             </div>
+
+            <p className="mt-1.5 text-center text-[10px] text-dark/40 sm:text-xs">
+              {getMinOrderHint(product.priceUnit)}
+            </p>
           </>
         )}
 
-        <div className="mt-auto flex flex-col gap-1.5 pt-2 sm:flex-row sm:gap-2 sm:pt-3">
+        <div className="mt-auto flex gap-1.5 pt-2.5 sm:gap-2 sm:pt-3">
           <Button
             variant="default"
             size="sm"
-            className="h-8 flex-1 rounded-lg text-xs sm:h-9 sm:rounded-xl sm:text-sm"
+            className="h-8 flex-1 rounded-xl text-xs font-bold sm:h-9 sm:text-sm"
             onClick={handleOrderNow}
           >
-            <MessageCircle className="size-3.5 sm:size-4" />
-            اطلب
+            اطلب الآن
           </Button>
           <Button
             variant="secondary"
             size="sm"
-            className="h-8 flex-1 rounded-lg text-xs sm:h-9 sm:rounded-xl sm:text-sm"
+            className="h-8 flex-1 rounded-xl bg-cream text-xs font-bold text-dark hover:bg-brand-red/10 sm:h-9 sm:text-sm"
             onClick={handleAddToCart}
             disabled={product.pricePerKg === null}
           >
             <ShoppingCart className="size-3.5 sm:size-4" />
-            السلة
+            سلة
           </Button>
         </div>
       </div>

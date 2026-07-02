@@ -8,12 +8,12 @@ import { CartToast } from "@/components/layout/CartToast"
 import { MobileBottomNav } from "@/components/layout/MobileBottomNav"
 import { OrderSummaryBar } from "@/components/layout/OrderSummaryBar"
 import { CartCheckout } from "@/components/cart/CartCheckout"
+import { CategoriesPicker } from "@/components/layout/CategoriesPicker"
+import { BackToTopButton } from "@/components/layout/BackToTopButton"
 import { Hero } from "@/components/sections/Hero"
 import { TrustBar } from "@/components/sections/TrustBar"
 import { Categories } from "@/components/sections/Categories"
-import { FeaturedProducts } from "@/components/sections/FeaturedProducts"
-import { OccasionOffers } from "@/components/sections/OccasionOffers"
-import { WholesaleOffers } from "@/components/sections/WholesaleOffers"
+import { HomeProducts } from "@/components/sections/HomeProducts"
 import { HowToOrder } from "@/components/sections/HowToOrder"
 import { WhyUs } from "@/components/sections/WhyUs"
 import { Gallery } from "@/components/sections/Gallery"
@@ -29,9 +29,7 @@ function HomePage() {
       <Hero />
       <TrustBar />
       <Categories />
-      <FeaturedProducts />
-      <OccasionOffers />
-      <WholesaleOffers />
+      <HomeProducts />
       <HowToOrder />
       <WhyUs />
       <Gallery />
@@ -53,7 +51,7 @@ function App() {
         className={cn(
           "pb-16 md:pb-0",
           hasItems && "md:pb-20",
-          location.pathname !== "/" && "pt-14 sm:pt-16",
+          location.pathname !== "/" && "pt-[4.5rem] sm:pt-20",
         )}
       >
         <Routes>
@@ -64,8 +62,10 @@ function App() {
       <Footer />
       <OrderSummaryBar />
       <CartCheckout />
+      <CategoriesPicker />
       <CartToast />
       <MobileBottomNav />
+      <BackToTopButton />
       <WhatsAppFloatButton />
       <PhoneFloatButton />
     </>
