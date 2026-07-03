@@ -47,12 +47,7 @@ export function Testimonials() {
                   key={item.id}
                   className="basis-full ps-4 md:basis-1/2 lg:basis-1/2"
                 >
-                  <article
-                    className={cn(
-                      "relative flex min-h-[220px] flex-col rounded-3xl bg-cream p-8 shadow-soft sm:min-h-[260px] sm:p-10",
-                      item.isPlaceholder && "border border-dashed border-amber/40",
-                    )}
-                  >
+                  <article className="relative flex min-h-[220px] flex-col rounded-3xl bg-cream p-8 shadow-soft sm:min-h-[260px] sm:p-10">
                     <Quote className="absolute top-6 end-6 size-10 text-brand-red/15" />
                     <div className="flex items-center gap-4">
                       <div className="flex size-14 items-center justify-center rounded-full bg-brand-red/10 sm:size-16">
@@ -62,6 +57,9 @@ export function Testimonials() {
                         <p className="text-base font-bold text-dark sm:text-lg">
                           {item.name}
                         </p>
+                        {item.area && (
+                          <p className="text-xs text-dark/50 sm:text-sm">{item.area}</p>
+                        )}
                         <StarRating rating={item.rating} />
                       </div>
                     </div>
