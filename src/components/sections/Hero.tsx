@@ -30,7 +30,7 @@ export function Hero() {
       <div className="container-main relative z-10 px-4 pb-20 pt-24 text-center sm:px-6 sm:pt-28 lg:px-8">
         <MotionWrapper className="mx-auto max-w-2xl">
           <span className="mb-5 inline-block rounded-full bg-brand-red px-4 py-1.5 text-sm font-bold text-white shadow-lg">
-            توصيل مبرد لبني سويف
+            دليفري واستلام من ٣ فروع — بني سويف
           </span>
 
           <h1 className="font-display text-3xl font-black leading-tight text-white sm:text-5xl lg:text-6xl">
@@ -40,7 +40,7 @@ export function Hero() {
           </h1>
 
           <p className="mx-auto mt-4 max-w-lg text-base text-white/90 sm:text-lg">
-            ضأن، كندوز، بتلو ومصنعات طازة يوميًا مع توصيل سريع
+            لحوم، مشويات، دواجن ومصنعات طازة يوميًا — اطلب أونلاين بسهولة
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">

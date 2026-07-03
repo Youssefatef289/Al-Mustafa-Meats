@@ -1,10 +1,10 @@
-import { ShieldCheck, Snowflake, Clock, BadgeCheck } from "lucide-react"
+import { ShieldCheck, Truck, Clock, BadgeCheck } from "lucide-react"
 import { MotionWrapper } from "@/components/shared/MotionWrapper"
 
 const TRUST_ITEMS = [
   { icon: ShieldCheck, text: "لحوم بلدي 100% من مصادر موثوقة" },
-  { icon: Snowflake, text: "تغليف فاكيوم وتوصيل مبرد" },
-  { icon: Clock, text: "التوصيل خلال 24-48 ساعة" },
+  { icon: Truck, text: "توصيل داخل بني سويف" },
+  { icon: Clock, text: "استلام من الفرع أو دليفري" },
   { icon: BadgeCheck, text: "ضمان الجودة أو استرجاع الفلوس" },
 ] as const
 

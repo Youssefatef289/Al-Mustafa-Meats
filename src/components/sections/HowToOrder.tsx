@@ -4,18 +4,18 @@ import { SectionHeading } from "@/components/shared/SectionHeading"
 const STEPS = [
   {
     step: 1,
-    title: "اختار المنتجات وحدد الكمية",
-    description: "تصفح الأقسام واختار اللحوم اللي تحبها — كيلو أو نص كيلو",
+    title: "اختار المنتجات وحدد الوزن",
+    description: "تصفح الأقسام، حدد الكمية، والسعر بيتحدث تلقائيًا",
   },
   {
     step: 2,
-    title: "أكّد الطلب على واتساب أو اتصل بينا",
-    description: "أضف للطلب واضغط \"أكمل الطلب على واتساب\" — أو كلمنا مباشرة",
+    title: "أضف للسلة وأكّد الطلب",
+    description: "املأ بياناتك واختر دليفري أو استلام من أقرب فرع — وبعدين أرسل الطلب على واتساب",
   },
   {
     step: 3,
-    title: "استلم طلبك مبرد وطازة لباب البيت",
-    description: "بنوصلك في الموعد المتفق عليه — تغليف فاكيوم وتوصيل مبرد",
+    title: "استلم طلبك طازة",
+    description: "بنوصلك لباب البيت داخل بني سويف، أو تستلم من الفرع في الميعاد اللي يناسبك",
   },
 ] as const
 
@@ -23,7 +23,7 @@ export function HowToOrder() {
   return (
     <section className="section-padding bg-white" aria-labelledby="howto-heading">
       <div className="container-main">
-        <SectionHeading title="إزاي تطلب؟" />
+        <SectionHeading title="طريقة الطلب" subtitle="٣ خطوات بسيطة وطلبك يوصلك" />
 
         <div className="relative grid gap-8 md:grid-cols-3">
           <div
