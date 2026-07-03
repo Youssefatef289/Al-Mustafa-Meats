@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { MotionWrapper } from "@/components/shared/MotionWrapper"
-import { FacebookIcon, InstagramIcon } from "@/components/shared/SocialIcons"
+import { FacebookIcon, TikTokIcon } from "@/components/shared/SocialIcons"
 import {
   ASSETS,
   BRAND,
@@ -70,13 +70,13 @@ export function FinalCTA() {
               <FacebookIcon className="size-5" />
             </a>
             <a
-              href={BRAND.instagram}
+              href={BRAND.tiktok}
               target="_blank"
               rel="noopener noreferrer"
               className="flex size-11 items-center justify-center rounded-full bg-white/15 text-white hover:bg-white/25"
-              aria-label="إنستجرام"
+              aria-label="تيك توك"
             >
-              <InstagramIcon className="size-5" />
+              <TikTokIcon className="size-5" />
             </a>
           </div>
         </MotionWrapper>

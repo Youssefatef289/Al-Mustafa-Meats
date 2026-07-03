@@ -13,7 +13,7 @@ export const BRAND = {
   email: "info@almustafameats.com",
   workingHours: "يوميًا: 9 ص — 11 م",
   facebook: "https://www.facebook.com/almostafameat",
-  instagram: "https://instagram.com/",
+  tiktok: "https://www.tiktok.com/@lohom_elmostafa_bns",
 } as const
 
 export const BRANCHES = [

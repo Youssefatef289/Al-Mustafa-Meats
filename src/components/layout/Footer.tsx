@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { Mail, MapPin, Phone } from "lucide-react"
-import { FacebookIcon, InstagramIcon } from "@/components/shared/SocialIcons"
+import { FacebookIcon, TikTokIcon } from "@/components/shared/SocialIcons"
 import {
   ASSETS,
   BRANCHES,
@@ -119,13 +119,13 @@ export function Footer() {
                 <FacebookIcon className="size-5" />
               </a>
               <a
-                href={BRAND.instagram}
+                href={BRAND.tiktok}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex size-10 items-center justify-center rounded-full bg-white/10 hover:bg-brand-red"
-                aria-label="إنستجرام"
+                aria-label="تيك توك"
               >
-                <InstagramIcon className="size-5" />
+                <TikTokIcon className="size-5" />
               </a>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import { ExternalLink } from "lucide-react"
+import { TikTokIcon } from "@/components/shared/SocialIcons"
 import { Button } from "@/components/ui/button"
 import { MotionWrapper } from "@/components/shared/MotionWrapper"
 import { SectionHeading } from "@/components/shared/SectionHeading"
@@ -35,12 +35,12 @@ export function Gallery() {
         <div className="mt-10 text-center">
           <Button variant="outlineDark" size="lg" asChild>
             <a
-              href={BRAND.instagram}
+              href={BRAND.tiktok}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <ExternalLink className="size-4" />
-              تابعنا على انستجرام
+              <TikTokIcon className="size-4" />
+              تابعنا على تيك توك
             </a>
           </Button>
         </div>
