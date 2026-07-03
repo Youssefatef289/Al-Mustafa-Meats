@@ -9,7 +9,7 @@
   --color-white: #ffffff;
 
   --font-display: "Cairo", sans-serif;
-  --font-body: "Tajawal", sans-serif;
+  --font-body: "Cairo", sans-serif;
 
   --shadow-soft: 0 4px 20px -4px rgb(28 25 23 / 0.1);
   --shadow-soft-lg: 0 8px 30px -8px rgb(28 25 23 / 0.15);
@@ -36,7 +36,8 @@
   }
 
   body {
-    @apply bg-cream text-dark font-body antialiased;
+    @apply bg-cream text-dark antialiased;
+    font-family: "Cairo", sans-serif;
   }
 
   h1,
@@ -45,7 +46,7 @@
   h4,
   h5,
   h6 {
-    font-family: var(--font-display);
+    font-family: "Cairo", sans-serif;
   }
 
   .tabular-nums {
@@ -60,11 +61,11 @@
 
 @layer utilities {
   .font-display {
-    font-family: var(--font-display);
+    font-family: "Cairo", sans-serif;
   }
 
   .font-body {
-    font-family: var(--font-body);
+    font-family: "Cairo", sans-serif;
   }
 
   .section-padding {
