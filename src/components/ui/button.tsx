@@ -3,24 +3,28 @@ import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
+const variantSwipeClass = {
+  default: "btn-diagonal--default",
+  outline: "btn-diagonal--outline",
+  outlineDark: "btn-diagonal--outline-dark",
+  secondary: "btn-diagonal--secondary",
+  ghost: "btn-diagonal--ghost",
+  whatsapp: "btn-diagonal--whatsapp",
+  amber: "btn-diagonal--amber",
+} as const
+
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "btn-diagonal inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default:
-          "bg-brand-red text-white shadow-soft hover:bg-brand-red-dark hover:scale-[1.03] hover:shadow-soft-lg active:scale-[0.98]",
-        outline:
-          "border-2 border-white/80 bg-transparent text-white hover:bg-white/10 hover:scale-[1.03] active:scale-[0.98]",
-        outlineDark:
-          "border-2 border-dark/15 bg-white text-dark hover:border-brand-red hover:scale-[1.03] hover:shadow-soft active:scale-[0.98]",
-        secondary:
-          "border-2 border-dark/10 bg-cream text-dark hover:border-amber hover:scale-[1.03] hover:shadow-soft active:scale-[0.98]",
-        ghost: "text-dark hover:bg-dark/5",
-        whatsapp:
-          "bg-[#25D366] text-white shadow-soft hover:bg-[#20bd5a] hover:scale-[1.03] hover:shadow-soft-lg active:scale-[0.98]",
-        amber:
-          "bg-amber text-dark shadow-soft hover:brightness-110 hover:scale-[1.03] active:scale-[0.98]",
+        default: variantSwipeClass.default,
+        outline: variantSwipeClass.outline,
+        outlineDark: variantSwipeClass.outlineDark,
+        secondary: variantSwipeClass.secondary,
+        ghost: variantSwipeClass.ghost,
+        whatsapp: variantSwipeClass.whatsapp,
+        amber: variantSwipeClass.amber,
       },
       size: {
         default: "h-11 px-6 py-2",

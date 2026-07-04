@@ -98,3 +98,140 @@
     animation: none;
   }
 }
+
+@layer components {
+  .btn-diagonal {
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    border-width: 2px;
+    border-style: solid;
+    background: transparent !important;
+    transition: color 0.5s ease;
+  }
+
+  .btn-diagonal::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -40px;
+    z-index: -1;
+    height: 100%;
+    width: 0%;
+    transform: skewX(45deg);
+    transition: width 0.5s ease;
+  }
+
+  .btn-diagonal:hover::before {
+    width: 160%;
+  }
+
+  .btn-diagonal--default {
+    border-color: var(--color-brand-red);
+    color: var(--color-brand-red);
+  }
+
+  .btn-diagonal--default::before {
+    background-color: var(--color-brand-red);
+  }
+
+  .btn-diagonal--default:hover {
+    color: var(--color-white);
+  }
+
+  .btn-diagonal--outline {
+    border-color: rgb(255 255 255 / 0.85);
+    color: var(--color-white);
+  }
+
+  .btn-diagonal--outline::before {
+    background-color: var(--color-white);
+  }
+
+  .btn-diagonal--outline:hover {
+    color: var(--color-brand-red);
+  }
+
+  .btn-diagonal--outline-dark {
+    border-color: rgb(28 25 23 / 0.15);
+    color: var(--color-dark);
+    background-color: var(--color-white) !important;
+  }
+
+  .btn-diagonal--outline-dark::before {
+    background-color: var(--color-brand-red);
+  }
+
+  .btn-diagonal--outline-dark:hover {
+    border-color: var(--color-brand-red);
+    color: var(--color-white);
+  }
+
+  .btn-diagonal--secondary {
+    border-color: rgb(28 25 23 / 0.12);
+    color: var(--color-dark);
+    background-color: var(--color-cream) !important;
+  }
+
+  .btn-diagonal--secondary::before {
+    background-color: var(--color-brand-red);
+  }
+
+  .btn-diagonal--secondary:hover {
+    border-color: var(--color-brand-red);
+    color: var(--color-white);
+  }
+
+  .btn-diagonal--ghost {
+    border-color: transparent;
+    color: var(--color-dark);
+  }
+
+  .btn-diagonal--ghost::before {
+    background-color: rgb(28 25 23 / 0.08);
+  }
+
+  .btn-diagonal--ghost:hover {
+    border-color: rgb(28 25 23 / 0.08);
+    color: var(--color-dark);
+  }
+
+  .btn-diagonal--whatsapp {
+    border-color: #25d366;
+    color: #25d366;
+  }
+
+  .btn-diagonal--whatsapp::before {
+    background-color: #25d366;
+  }
+
+  .btn-diagonal--whatsapp:hover {
+    color: var(--color-white);
+  }
+
+  .btn-diagonal--amber {
+    border-color: var(--color-amber);
+    color: var(--color-dark);
+  }
+
+  .btn-diagonal--amber::before {
+    background-color: var(--color-amber);
+  }
+
+  .btn-diagonal--amber:hover {
+    color: var(--color-dark);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn-diagonal,
+    .btn-diagonal::before {
+      transition: none;
+    }
+
+    .btn-diagonal:hover::before {
+      width: 100%;
+      left: 0;
+      transform: none;
+    }
+  }
+}
