@@ -103,6 +103,7 @@
   .btn-diagonal {
     position: relative;
     z-index: 0;
+    isolation: isolate;
     overflow: hidden;
     border-width: 2px;
     border-style: solid;
@@ -115,11 +116,12 @@
     position: absolute;
     top: 0;
     left: -40px;
-    z-index: -1;
+    z-index: 0;
     height: 100%;
     width: 0%;
     transform: skewX(45deg);
     transition: width 0.5s ease;
+    pointer-events: none;
   }
 
   .btn-diagonal:hover::before {
@@ -220,6 +222,16 @@
 
   .btn-diagonal--amber:hover {
     color: var(--color-dark);
+  }
+
+  .btn-diagonal--active {
+    border-color: var(--color-brand-red);
+    color: var(--color-white);
+  }
+
+  .btn-diagonal--active::before {
+    background-color: var(--color-brand-red);
+    width: 160%;
   }
 
   @media (prefers-reduced-motion: reduce) {

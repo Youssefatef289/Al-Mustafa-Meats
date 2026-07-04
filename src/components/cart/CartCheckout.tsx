@@ -330,7 +330,7 @@ export function CartCheckout() {
               </div>
 
               <div className="shrink-0 border-t border-dark/10 bg-white p-4">
-                <Button type="submit" variant="whatsapp" size="lg" className="w-full rounded-xl">
+                <Button type="submit" variant="whatsapp" size="lg" className="w-full">
                   <MessageCircle className="size-5" />
                   إرسال الطلب على واتساب
                 </Button>

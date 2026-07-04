@@ -39,7 +39,6 @@ export function OrderSummaryBar() {
 
         <Button
           variant="default"
-          className="rounded-full"
           onClick={() => setCartOpen(true)}
         >
           متابعة الدفع

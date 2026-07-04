@@ -70,36 +70,35 @@ export function ProductsPage() {
           ref={tabsContainerRef}
           className="mb-8 flex gap-2 overflow-x-auto scroll-smooth pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
-          {PRODUCT_CATEGORIES.map((cat) => (
-            <button
-              key={cat.id}
-              ref={(el) => {
-                tabRefs.current[cat.id] = el
-              }}
-              type="button"
-              onClick={() => handleTabChange(cat.id)}
-              className={cn(
-                "relative flex shrink-0 items-center gap-2 rounded-full px-4 py-2 text-xs font-bold transition-all sm:px-5 sm:py-2.5 sm:text-sm",
-                active === cat.id
-                  ? "bg-brand-red text-white shadow-soft"
-                  : "bg-white text-dark/70 hover:bg-brand-red/10 hover:text-brand-red",
-              )}
-            >
-              <img
-                src={imageSrc(cat.image)}
-                alt=""
-                className="size-6 rounded-full object-cover sm:size-7"
-              />
-              {cat.label}
-              {active === cat.id && (
-                <motion.span
-                  layoutId="active-tab-dot"
-                  className="absolute -bottom-1 left-1/2 size-1.5 -translate-x-1/2 rounded-full bg-brand-red md:hidden"
-                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                />
-              )}
-            </button>
-          ))}
+          {PRODUCT_CATEGORIES.map((cat) => {
+            const isActive = active === cat.id
+
+            return (
+              <button
+                key={cat.id}
+                ref={(el) => {
+                  tabRefs.current[cat.id] = el
+                }}
+                type="button"
+                onClick={() => handleTabChange(cat.id)}
+                className={cn(
+                  "btn-diagonal flex shrink-0 items-center gap-2 rounded-none px-3 py-2 text-xs font-bold sm:px-4 sm:py-2.5 sm:text-sm",
+                  isActive
+                    ? "btn-diagonal--active"
+                    : "btn-diagonal--default bg-white",
+                )}
+              >
+                <span className="relative z-10 inline-flex items-center gap-2">
+                  <img
+                    src={imageSrc(cat.image)}
+                    alt=""
+                    className="size-6 object-cover sm:size-7"
+                  />
+                  {cat.label}
+                </span>
+              </button>
+            )
+          })}
         </div>
 
         <AnimatePresence mode="wait">

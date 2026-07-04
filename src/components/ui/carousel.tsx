@@ -178,7 +178,7 @@ const CarouselPrevious = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute top-1/2 -translate-y-1/2 size-10 rounded-full",
+        "absolute top-1/2 -translate-y-1/2 size-10",
         className,
       )}
       disabled={!canScrollPrev}
@@ -204,7 +204,7 @@ const CarouselNext = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute top-1/2 -translate-y-1/2 size-10 rounded-full",
+        "absolute top-1/2 -translate-y-1/2 size-10",
         className,
       )}
       disabled={!canScrollNext}

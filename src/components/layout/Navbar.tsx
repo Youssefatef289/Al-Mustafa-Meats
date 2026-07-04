@@ -150,22 +150,23 @@ export function Navbar() {
                 key={link.href}
                 to={link.href}
                 className={cn(
-                  "relative rounded-full px-4 py-2 text-sm font-medium transition-colors",
+                  "group relative px-4 py-2.5 text-sm font-medium transition-colors",
                   isHeroMode
-                    ? "text-white/90 hover:bg-white/15 hover:text-white"
+                    ? "text-white/90 hover:text-white"
                     : isActive
                       ? "text-brand-red"
-                      : "text-dark/75 hover:bg-cream hover:text-brand-red",
+                      : "text-dark/75 hover:text-brand-red",
                 )}
               >
                 {link.label}
-                {isActive && !isHeroMode && (
-                  <motion.span
-                    layoutId="desktop-nav-line"
-                    className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-brand-red"
-                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                  />
-                )}
+                <span
+                  aria-hidden
+                  className={cn(
+                    "absolute inset-x-3 bottom-0.5 h-0.5 origin-center rounded-full transition-transform duration-300 ease-out",
+                    isHeroMode ? "bg-white" : "bg-brand-red",
+                    isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100",
+                  )}
+                />
               </Link>
             )
           })}
@@ -194,12 +195,14 @@ export function Navbar() {
           <Button
             variant={isHeroMode ? "outline" : "default"}
             size="sm"
-            className={cn("rounded-full", isHeroMode && "border-white/80 text-white hover:bg-white/15")}
+            className={cn(isHeroMode && "border-white/80 text-white hover:bg-white/15")}
             asChild
           >
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-              <img src={ASSETS.whatsappIcon} alt="" className="size-4" />
-              اطلب دلوقتي
+              <span className="relative z-10 inline-flex items-center justify-center gap-2">
+                <img src={ASSETS.whatsappIcon} alt="" className="size-4" />
+                اطلب الان 
+              </span>
             </a>
           </Button>
         </div>
@@ -272,9 +275,13 @@ export function Navbar() {
                   key={link.href}
                   to={link.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-xl px-4 py-3 text-base font-medium hover:bg-cream"
+                  className="group relative rounded-xl px-4 py-3 text-base font-medium text-dark/80 transition-colors hover:text-brand-red"
                 >
                   {link.label}
+                  <span
+                    aria-hidden
+                    className="absolute inset-x-4 bottom-2 h-0.5 origin-center scale-x-0 rounded-full bg-brand-red transition-transform duration-300 ease-out group-hover:scale-x-100"
+                  />
                 </Link>
               ))}
             </nav>

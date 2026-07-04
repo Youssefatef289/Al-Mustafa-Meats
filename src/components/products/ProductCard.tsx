@@ -132,7 +132,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
           <Button
             variant="default"
             size="sm"
-            className="h-8 flex-1 rounded-xl text-xs font-bold sm:h-9 sm:text-sm"
+            className="h-8 flex-1 text-xs font-bold sm:h-9 sm:text-sm"
             onClick={handleOrderNow}
           >
             اطلب الآن
@@ -140,7 +140,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
           <Button
             variant="secondary"
             size="sm"
-            className="h-8 flex-1 rounded-xl bg-cream text-xs font-bold text-dark hover:bg-brand-red/10 sm:h-9 sm:text-sm"
+            className="h-8 flex-1 bg-cream text-xs font-bold text-dark hover:bg-brand-red/10 hover:text-white sm:h-9 sm:text-sm"
             onClick={handleAddToCart}
             disabled={product.pricePerKg === null}
           >

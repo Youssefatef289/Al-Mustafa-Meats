@@ -36,8 +36,10 @@ export function FinalCTA() {
             asChild
           >
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-              <img src={ASSETS.whatsappIcon} alt="" className="size-6" />
-              اطلب على واتساب
+              <span className="relative z-10 inline-flex items-center justify-center gap-2">
+                <img src={ASSETS.whatsappIcon} alt="" className="size-6" />
+                اطلب على واتساب
+              </span>
             </a>
           </Button>
 

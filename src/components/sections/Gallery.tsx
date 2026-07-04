@@ -39,8 +39,10 @@ export function Gallery() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <TikTokIcon className="size-4" />
-              تابعنا على تيك توك
+              <span className="relative z-10 inline-flex items-center justify-center gap-2">
+                <TikTokIcon className="size-4" />
+                تابعنا على تيك توك
+              </span>
             </a>
           </Button>
         </div>

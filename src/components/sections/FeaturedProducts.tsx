@@ -25,10 +25,12 @@ export function FeaturedProducts() {
         </div>
 
         <MotionWrapper className="mt-10 text-center">
-          <Button variant="default" size="lg" className="rounded-full" asChild>
+          <Button variant="default" size="lg" asChild>
             <Link to="/products">
-              كل المنتجات
-              <ArrowLeft className="size-4" />
+              <span className="relative z-10 inline-flex items-center justify-center gap-2">
+                كل المنتجات
+                <ArrowLeft className="size-4" />
+              </span>
             </Link>
           </Button>
         </MotionWrapper>

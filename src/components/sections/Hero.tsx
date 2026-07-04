@@ -44,14 +44,20 @@ export function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <Button variant="default" size="lg" className="rounded-full shadow-lg" asChild>
+            <Button variant="default" size="lg" className="shadow-lg" asChild>
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="size-5" />
-                اطلب دلوقتي
+                <span className="relative z-10 inline-flex items-center justify-center gap-2">
+                  <MessageCircle className="size-5" />
+                  اطلب دلوقتي
+                </span>
               </a>
             </Button>
-            <Button variant="outline" size="lg" className="rounded-full" asChild>
-              <Link to="/products">المنتجات</Link>
+            <Button variant="outline" size="lg" asChild>
+              <Link to="/products">
+                <span className="relative z-10 inline-flex items-center justify-center gap-2">
+                  المنتجات
+                </span>
+              </Link>
             </Button>
           </div>
         </MotionWrapper>
