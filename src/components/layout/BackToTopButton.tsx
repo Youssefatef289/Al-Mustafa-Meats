@@ -32,7 +32,7 @@ export function BackToTopButton() {
           className={cn(
             "fixed start-6 z-40 flex size-12 items-center justify-center rounded-full bg-white text-brand-red shadow-soft-lg ring-1 ring-dark/10 transition-transform hover:scale-110 md:size-14",
             "motion-reduce:hover:scale-100",
-            hasItems ? "bottom-36 md:bottom-28" : "bottom-32 md:bottom-24",
+            hasItems ? "bottom-32 md:bottom-28" : "bottom-28 md:bottom-24",
           )}
           aria-label="العودة للأعلى"
           style={{ marginBottom: "env(safe-area-inset-bottom)" }}
